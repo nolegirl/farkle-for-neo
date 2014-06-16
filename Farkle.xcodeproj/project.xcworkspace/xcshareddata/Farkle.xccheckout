@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D251DA9A-33B5-4A70-91A8-03AC2DAADB3E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Farkle</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F4C834FD-0974-47F8-84F5-8F2EB57CD0BD</key>
+		<string>https://github.com/nolegirl/farkle-for-neo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Farkle.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F4C834FD-0974-47F8-84F5-8F2EB57CD0BD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/nolegirl/farkle-for-neo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F4C834FD-0974-47F8-84F5-8F2EB57CD0BD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F4C834FD-0974-47F8-84F5-8F2EB57CD0BD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Farkle copy</string>
+		</dict>
+	</array>
+</dict>
+</plist>
