@@ -10,13 +10,6 @@
 
 @interface DLViewController ()
 
-@property (nonatomic) BOOL die1KeepButtonSelected;
-@property (nonatomic) BOOL die2KeepButtonSelected;
-@property (nonatomic) BOOL die3KeepButtonSelected;
-@property (nonatomic) BOOL die4KeepButtonSelected;
-@property (nonatomic) BOOL die5KeepButtonSelected;
-@property (nonatomic) BOOL die6KeepButtonSelected;
-
 @end
 
 @implementation DLViewController
@@ -46,16 +39,6 @@
     
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", (long)_currentScore];
 }
-
-//- (NSArray *)getDice {
-//    NSMutableArray *values = [[NSMutableArray alloc] init];
-//    
-//    for (NSInteger i = 0; i < 6; i++) {
-//        NSNumber *die = @([self.diceModel getDiceRoll]);
-//        [values addObject:die];
-//    }
-//    return values;
-//}
 
 - (void)fillViews {
     for (NSInteger i = 0; i < 6; i++) {
