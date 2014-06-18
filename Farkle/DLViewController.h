@@ -20,5 +20,5 @@
 @property (nonatomic) NSInteger currentScore;
 
 @property (nonatomic, strong) NSMutableArray *dice;
-
+@property (nonatomic, strong) NSMutableArray *keptDice;
 @end

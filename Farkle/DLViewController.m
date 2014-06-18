@@ -37,7 +37,7 @@
     
     [self fillViews];
     
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", (long)_currentScore];
+    
 }
 
 - (void)fillViews {
@@ -48,62 +48,71 @@
     }
 }
 
-//
-//- (NSInteger)numberOfMatches:(NSArray*)dice matches:(NSInteger)number {
-//    NSInteger numberOfMatches = 0;
-//    
-//    for (NSNumber *die in dice) {
-//        if ([die integerValue] == number) {
-//            numberOfMatches++;
-//        }
-//    }
-//    return numberOfMatches;
-//}
-//
-//- (NSInteger)getScore:(NSInteger)numberOfMatches number:(NSInteger)die {
-//    
-//    if (numberOfMatches >= 3) {
-//        return [self getScoreForMoreThanThreeMatches:numberOfMatches number:die];
-//    }
-//    
-//    else if (die == 1) {
-//        return numberOfMatches * 100;
-//    }
-//    
-//    else if (die == 5) {
-//        return numberOfMatches * 50;
-//    }
-//    
-//    else return 0;
-//}
-//
-//- (NSInteger)getScoreForMoreThanThreeMatches:(NSInteger)numberOfMatches number:(NSInteger)die {
-//    NSInteger scoreConstant = 0;
-//    switch(die) {
-//        case 1:
-//            scoreConstant = 300;
-//            break;
-//        case 2:
-//            scoreConstant = 200;
-//            break;
-//        case 3:
-//            scoreConstant = 300;
-//            break;
-//        case 4:
-//            scoreConstant = 400;
-//            break;
-//        case 5:
-//            scoreConstant = 500;
-//            break;
-//        case 6:
-//            scoreConstant = 600;
-//            break;
-//    }
-//    NSInteger multiplier = numberOfMatches - 2;
-//    NSInteger score = multiplier * scoreConstant;
-//    
-//    return score;
-//}
+
+
+- (NSInteger)numberOfMatches:(NSInteger)number {
+    NSInteger numberOfMatches = 0;
+    for (NSNumber *keptDie in self.keptDice) {
+        if ([keptDie integerValue] == number) {
+            numberOfMatches++;
+            NSLog(@"%i", numberOfMatches);
+        }
+    }
+    return numberOfMatches;
+}
+
+- (NSInteger)getScore {
+    _currentScore = 0;
+    for (NSInteger i = 1; i < 7; i++) {
+        NSInteger matches = [self numberOfMatches:i];
+        _currentScore += [self getScore:matches number:i];
+    }
+    return _currentScore;
+}
+
+- (NSInteger)getScore:(NSInteger)numberOfMatches number:(NSInteger)die {
+    
+    if (numberOfMatches >= 3) {
+        return [self getScoreForMoreThanThreeMatches:numberOfMatches number:die];
+    }
+    else if (die == 1) {
+        return numberOfMatches * 100;
+    }
+    
+    else if (die == 5) {
+        return numberOfMatches * 50;
+    }
+    
+    else return 0;
+}
+
+- (NSInteger)getScoreForMoreThanThreeMatches:(NSInteger)numberOfMatches number:(NSInteger)die {
+    NSInteger scoreConstant = 0;
+    switch(die) {
+        case 1:
+            scoreConstant = 300;
+            break;
+        case 2:
+            scoreConstant = 200;
+            break;
+        case 3:
+            scoreConstant = 300;
+            break;
+        case 4:
+            scoreConstant = 400;
+            break;
+        case 5:
+            scoreConstant = 500;
+            break;
+        case 6:
+            scoreConstant = 600;
+            break;
+    }
+    NSInteger multiplier = numberOfMatches - 2;
+    NSInteger score = multiplier * scoreConstant;
+    
+    return score;
+}
 
 - (IBAction)dieKeepButtonSelected:(id)sender
 {
@@ -114,13 +123,23 @@
         currentDie.locked = YES;
         [sender setBackgroundColor:[UIColor redColor]];
         [sender setTitle:@"Locked" forState:UIControlStateNormal];
+        NSNumber *keptDie = [NSNumber numberWithInt:currentDie.currentValue];
+        if (!self.keptDice) {
+            self.keptDice = [[NSMutableArray alloc] init];
+        }
+        [self.keptDice addObject:keptDie];
+        [self updateScore];
     } else {
         currentDie.locked = NO;
         [sender setBackgroundColor:[UIColor clearColor]];
         [sender setTitle:@"Lock" forState:UIControlStateNormal];
-        
+        [self.keptDice removeObject:currentDie];
     }
-    
+}
+
+- (void)updateScore {
+    [self getScore];
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", (long)_currentScore];
 }
 
 @end
