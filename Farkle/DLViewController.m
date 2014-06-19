@@ -25,7 +25,7 @@
     }
 }
 
-- (IBAction)rollButtonClicked:(id)sender {
+- (IBAction)rollButtonTapped:(id)sender {
     
     //TESTING
     _currentScore = 0;
@@ -36,8 +36,7 @@
     }
     
     [self fillViews];
-    
-    
+    [self.keptDice removeAllObjects];
 }
 
 - (void)fillViews {
@@ -47,8 +46,6 @@
         [dieView showDie:[die currentValue]];
     }
 }
-
-
 
 - (NSInteger)numberOfMatches:(NSInteger)number {
     NSInteger numberOfMatches = 0;
@@ -133,13 +130,17 @@
         currentDie.locked = NO;
         [sender setBackgroundColor:[UIColor clearColor]];
         [sender setTitle:@"Lock" forState:UIControlStateNormal];
-        [self.keptDice removeObject:currentDie];
+        [self.keptDice removeObject:_keptDice];
     }
 }
 
 - (void)updateScore {
     [self getScore];
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", (long)_currentScore];
+}
+
+- (IBAction)saveRollButtonTapped:(id)sender {
+
 }
 
 @end

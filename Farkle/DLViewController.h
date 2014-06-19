@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "DLDieView.h"
-#import "DLDie.h"   
+#import "DLDie.h"  
+#import "DLPlayer.h"
 
 @interface DLViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *rollTotalLabel;
+@property (weak, nonatomic) IBOutlet UILabel *player1ScoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *player2ScoreLabel;
 
 @property (strong, nonatomic) IBOutletCollection(DLDieView) NSArray *dieViews;
 

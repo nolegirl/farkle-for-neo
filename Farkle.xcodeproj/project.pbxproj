@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2436EA8E1948A12700F55144 /* painted-x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2436EA8D1948A12700F55144 /* painted-x.png */; };
 		2436EA911948CFD100F55144 /* DLDie.m in Sources */ = {isa = PBXBuildFile; fileRef = 2436EA901948CFD100F55144 /* DLDie.m */; };
+		243BA2FF195338FC008766CE /* DLPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 243BA2FE195338FC008766CE /* DLPlayer.m */; };
 		24618278193F669B000D5A02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24618277193F669B000D5A02 /* Foundation.framework */; };
 		2461827A193F669B000D5A02 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24618279193F669B000D5A02 /* CoreGraphics.framework */; };
 		2461827C193F669B000D5A02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2461827B193F669B000D5A02 /* UIKit.framework */; };
@@ -41,6 +42,8 @@
 		2436EA8D1948A12700F55144 /* painted-x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "painted-x.png"; sourceTree = "<group>"; };
 		2436EA8F1948CFD100F55144 /* DLDie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLDie.h; sourceTree = "<group>"; };
 		2436EA901948CFD100F55144 /* DLDie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLDie.m; sourceTree = "<group>"; };
+		243BA2FD195338FB008766CE /* DLPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLPlayer.h; sourceTree = "<group>"; };
+		243BA2FE195338FC008766CE /* DLPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLPlayer.m; sourceTree = "<group>"; };
 		24618274193F669B000D5A02 /* Farkle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Farkle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24618277193F669B000D5A02 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		24618279193F669B000D5A02 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -134,6 +137,8 @@
 				2436EA901948CFD100F55144 /* DLDie.m */,
 				246182C0193F6A7D000D5A02 /* DLDieView.h */,
 				246182C1193F6A7D000D5A02 /* DLDieView.m */,
+				243BA2FD195338FB008766CE /* DLPlayer.h */,
+				243BA2FE195338FC008766CE /* DLPlayer.m */,
 				2461828F193F669B000D5A02 /* Images.xcassets */,
 				2436EA8D1948A12700F55144 /* painted-x.png */,
 				2461827E193F669B000D5A02 /* Supporting Files */,
@@ -270,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2436EA911948CFD100F55144 /* DLDie.m in Sources */,
+				243BA2FF195338FC008766CE /* DLPlayer.m in Sources */,
 				246182C2193F6A7D000D5A02 /* DLDieView.m in Sources */,
 				246182AE193F66E6000D5A02 /* DLDiceDataController.m in Sources */,
 				24618288193F669B000D5A02 /* DLAppDelegate.m in Sources */,
